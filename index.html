@@ -15,6 +15,16 @@
         body {
             font-family: 'Inter', sans-serif;
         }
+         /* Example Tailwind colors fallback, adjust according to your setup */
+  .bg-primary {
+    background-color: #3b82f6; /* Tailwind blue-500 */
+  }
+  .text-primary {
+    color: #3b82f6;
+  }
+  .border-secondary {
+    border-color: #e5e7eb; /* Tailwind gray-200 */
+  }
         .min-h-screen{
             min-height: 85vh !important;
         }
@@ -225,7 +235,7 @@
                 <div class="w-full md:w-1/2">
                     <h3 class="text-2xl font-semibold text-gray-900 mb-6">Hi, I'm Lindsay Abba de-Graft</h3>
                     <p class="text-gray-700 mb-6 leading-relaxed">
-                        As a digital creator and lifestyle influencer with over 3 years of experience, I've partnered with leading brands to create authentic content that resonates with audiences across multiple platforms. My background in digital marketing and photography allows me to bring a strategic approach to every collaboration.
+                        As a digital creator and lifestyle influencer with a few years of experience, I've partnered with leading brands to create authentic content that resonates with audiences across multiple platforms. My background in digital marketing and photography allows me to bring a strategic approach to every collaboration.
                     </p>
                     <p class="text-gray-700 mb-8 leading-relaxed">
                         I believe in creating genuine connections through storytelling that feels personal and relatable. My content focuses on lifestyle, wellness, travel, and sustainable living - helping brands connect with conscious consumers in meaningful ways.
@@ -264,7 +274,7 @@
                 <div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-md">
                     <div class="h-64 overflow-hidden"><a href="https://vt.tiktok.com/ZShTNNjrs/">
                         <img src="./images/photo model_PhotoGrid.png" 
-                             alt="Beauty Brand Campaign" 
+                             alt="Dapper Deft Shoot" 
                              class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105"></a>
                     </div>
                     <div class="p-6">
@@ -273,7 +283,7 @@
                         <div class="flex justify-between items-center">
                             <span class="text-sm text-primary font-medium">Photo Modeling</span>
                             <a href="https://vt.tiktok.com/ZShTNNjrs/" class="text-gray-900 hover:text-primary transition-colors">
-                                <i class="ri-arrow-right-line ri-lg"></i>
+                                <i class="ri-arrow-right-line ri-lg">view</i>
                             </a>
                         </div>
                     </div>
@@ -283,7 +293,7 @@
                 <div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-md">
                     <div class="h-64 overflow-hidden">
                         <a href="https://www.tiktok.com/@abba_degraft/video/7503141078908947717?_r=1&u_code=ejb3b4edk1l8fb&preview_pb=0&sharer_language=en&_d=eeck304721f4f1&share_item_id=7503141078908947717&source=h5_m&timestamp=1748266129&user_id=7483512293834130433&sec_user_id=MS4wLjABAAAA_kojrTnfok45kFKHEkXi1RdmA7NxjQr_KAt1soLCdGHim195-ycy1bBtrOq60OIQ&social_share_type=0&utm_source=whatsapp&utm_campaign=client_share&utm_medium=android&share_iid=7493333471553914625&share_link_id=419b19db-c521-4994-be88-22a1f8ddbede&share_app_id=1233&ugbiz_name=MAIN&ug_btm=b5836%2Cb2878&link_reflow_popup_iteration_sharer=%7B%22click_empty_to_play%22%3A1%2C%22dynamic_cover%22%3A1%2C%22follow_to_play_duration%22%3A-1.0%2C%22profile_clickable%22%3A1%7D&enable_checksum=1"><img src="./images/coperate.jpg" 
-                            alt="Luxury Hotel Partnership" 
+                            alt="Corperate Dinner" 
                             class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105"></a>
                         
                     </div>
@@ -313,7 +323,7 @@
                         <div class="flex justify-between items-center">
                             <span class="text-sm text-primary font-medium">Wellness</span>
                             <a href="#" class="text-gray-900 hover:text-primary transition-colors">
-                                <i class="ri-arrow-right-line ri-lg"></i>
+                                <i class="ri-arrow-right-line ri-lg">view</i>
                             </a>
                         </div>
                     </div>
@@ -332,7 +342,7 @@
                         <div class="flex justify-between items-center">
                             <span class="text-sm text-primary font-medium">Fashion</span>
                             <a href="#" class="text-gray-900 hover:text-primary transition-colors">
-                                <i class="ri-arrow-right-line ri-lg"></i>
+                                <i class="ri-arrow-right-line ri-lg">view</i>
                             </a>
                         </div>
                     </div>
@@ -351,7 +361,7 @@
                         <div class="flex justify-between items-center">
                             <span class="text-sm text-primary font-medium">Food</span>
                             <a href="#" class="text-gray-900 hover:text-primary transition-colors">
-                                <i class="ri-arrow-right-line ri-lg"></i>
+                                <i class="ri-arrow-right-line ri-lg">view</i>
                             </a>
                         </div>
                     </div>
@@ -370,7 +380,7 @@
                         <div class="flex justify-between items-center">
                             <span class="text-sm text-primary font-medium">Home</span>
                             <a href="#" class="text-gray-900 hover:text-primary transition-colors">
-                                <i class="ri-arrow-right-line ri-lg"></i>
+                                <i class="ri-arrow-right-line ri-lg">view</i>
                             </a>
                         </div>
                     </div>
@@ -382,132 +392,169 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="py-20 bg-white">
+    <section id="testimonials" class="py-20">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">Client Testimonials</h2>
-                <p class="text-gray-700 max-w-2xl mx-auto">What brands and partners say about working with me.</p>
-                <div class="w-24 h-1 bg-primary mx-auto mt-4"></div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Client Testimonials</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">What brands and partners say about working with me.</p>
+                <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
             </div>
             
-            <div class="relative" id="testimonial-container">
-                <div class="flex overflow-x-hidden" id="testimonial-slider">
-                    <div class="testimonial-card min-w-full md:min-w-[33.333%] px-4">
-                        <div class="bg-white rounded-xl p-8 shadow-md border border-secondary">
-                            <div class="flex items-center mb-4">
-                                <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                                    <img src="https://readdy.ai/api/search-image?query=professional%2520headshot%2520of%2520female%2520marketing%2520director%2520with%2520confident%2520expression%252C%2520business%2520attire%252C%2520neutral%2520background%252C%2520corporate%2520portrait%2520style&width=100&height=100&seq=10&orientation=squarish" 
-                                         alt="Sarah Johnson" 
-                                         class="w-full h-full object-cover object-top">
-                                </div>
-                                <div>
-                                    <h4 class="text-lg font-semibold text-gray-900">Sarah Johnson</h4>
-                                    <p class="text-sm text-gray-600">Marketing Director, Glow Cosmetics</p>
-                                </div>
-                            </div>
-                            <p class="text-gray-700 italic mb-4">"Working with Jessica was a game-changer for our brand. Her authentic approach to content creation helped us connect with our audience in a way we hadn't been able to before. The engagement on her posts exceeded our expectations by 200%."</p>
-                            <div class="flex text-primary">
-                                <i class="ri-star-fill ri-lg"></i>
-                                <i class="ri-star-fill ri-lg"></i>
-                                <i class="ri-star-fill ri-lg"></i>
-                                <i class="ri-star-fill ri-lg"></i>
-                                <i class="ri-star-fill ri-lg"></i>
-                            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-white rounded-lg shadow-md p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
                         </div>
                     </div>
-                    
-                    <div class="testimonial-card min-w-full md:min-w-[33.333%] px-4">
-                        <div class="bg-white rounded-xl p-8 shadow-md border border-secondary">
-                            <div class="flex items-center mb-4">
-                                <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                                    <img src="https://readdy.ai/api/search-image?query=professional%2520headshot%2520of%2520male%2520CEO%2520with%2520friendly%2520expression%252C%2520business%2520casual%2520attire%252C%2520neutral%2520background%252C%2520corporate%2520portrait%2520style&width=100&height=100&seq=11&orientation=squarish" 
-                                         alt="Michael Chen" 
-                                         class="w-full h-full object-cover object-top">
-                                </div>
-                                <div>
-                                    <h4 class="text-lg font-semibold text-gray-900">Michael Chen</h4>
-                                    <p class="text-sm text-gray-600">CEO, Serenity Hotels</p>
-                                </div>
-                            </div>
-                            <p class="text-gray-700 italic mb-4">"Jessica's content for our boutique hotel chain was exceptional. She captured the essence of each property while telling a compelling story that resonated with luxury travelers. We saw a 45% increase in bookings directly attributed to her campaign."</p>
-                            <div class="flex text-primary">
-                                <i class="ri-star-fill ri-lg"></i>
-                                <i class="ri-star-fill ri-lg"></i>
-                                <i class="ri-star-fill ri-lg"></i>
-                                <i class="ri-star-fill ri-lg"></i>
-                                <i class="ri-star-fill ri-lg"></i>
-                            </div>
+                    <p class="text-gray-700 mb-6">"Emma's content for our sustainable fashion line exceeded all expectations. Her authentic approach resonated with her audience and directly contributed to a 40% increase in website traffic during our campaign."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-4">
+                            <img src="https://readdy.ai/api/search-image?query=professional%2520headshot%2520of%2520male%2520founder%2520with%2520friendly%2520expression%252C%2520casual%2520attire%252C%2520neutral%2520background%252C%2520startup%2520founder%2520portrait%2520style&width=100&height=100&seq=13&orientation=squarish" 
+                            alt="David Wilson" 
+                            class="w-full h-full object-cover object-top">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Olivia Bennett</h4>
+                            <p class="text-gray-600 text-sm">Marketing Director, EcoStyle</p>
                         </div>
                     </div>
-                    
-                    <div class="testimonial-card min-w-full md:min-w-[33.333%] px-4">
-                        <div class="bg-white rounded-xl p-8 shadow-md border border-secondary">
-                            <div class="flex items-center mb-4">
-                                <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                                    <img src="https://readdy.ai/api/search-image?query=professional%2520headshot%2520of%2520female%2520brand%2520manager%2520with%2520friendly%2520expression%252C%2520casual%2520business%2520attire%252C%2520neutral%2520background%252C%2520corporate%2520portrait%2520style&width=100&height=100&seq=12&orientation=squarish" 
-                                         alt="Emily Rodriguez" 
-                                         class="w-full h-full object-cover object-top">
-                                </div>
-                                <div>
-                                    <h4 class="text-lg font-semibold text-gray-900">Emily Rodriguez</h4>
-                                    <p class="text-sm text-gray-600">Brand Manager, EcoStyle</p>
-                                </div>
-                            </div>
-                            <p class="text-gray-700 italic mb-4">"Jessica perfectly captured our sustainable fashion brand's ethos in her content. Her ability to communicate our values while creating visually stunning imagery helped us reach a new audience of conscious consumers."</p>
-                            <div class="flex text-primary">
-                                <i class="ri-star-fill ri-lg"></i>
-                                <i class="ri-star-fill ri-lg"></i>
-                                <i class="ri-star-fill ri-lg"></i>
-                                <i class="ri-star-fill ri-lg"></i>
-                                <i class="ri-star-half-fill ri-lg"></i>
-                            </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-white rounded-lg shadow-md p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
                         </div>
                     </div>
-                    
-                    <div class="testimonial-card min-w-full md:min-w-[33.333%] px-4">
-                        <div class="bg-white rounded-xl p-8 shadow-md border border-secondary">
-                            <div class="flex items-center mb-4">
-                                <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                                    <img src="https://readdy.ai/api/search-image?query=professional%2520headshot%2520of%2520male%2520founder%2520with%2520friendly%2520expression%252C%2520casual%2520attire%252C%2520neutral%2520background%252C%2520startup%2520founder%2520portrait%2520style&width=100&height=100&seq=13&orientation=squarish" 
+                    <p class="text-gray-700 mb-6">"Working with Emma was seamless from start to finish. Her strategic approach to content creation helped us reach new audiences and establish our brand in the wellness space. The ROI was impressive."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-4">
+                            <img src="https://readdy.ai/api/search-image?query=professional%2520headshot%2520of%2520male%2520founder%2520with%2520friendly%2520expression%252C%2520casual%2520attire%252C%2520neutral%2520background%252C%2520startup%2520founder%2520portrait%2520style&width=100&height=100&seq=13&orientation=squarish" 
+                            alt="David Wilson" 
+                            class="w-full h-full object-cover object-top">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Michael Rodriguez</h4>
+                            <p class="text-gray-600 text-sm">Founder, Mindful Wellness Co.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-white rounded-lg shadow-md p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6">"Emma's travel content for our boutique hotel chain captured the essence of our properties perfectly. Her audience engagement is remarkable, and we saw a 25% increase in bookings from her followers."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-4">
+                            <img src="https://readdy.ai/api/search-image?query=professional%2520headshot%2520of%2520male%2520founder%2520with%2520friendly%2520expression%252C%2520casual%2520attire%252C%2520neutral%2520background%252C%2520startup%2520founder%2520portrait%2520style&width=100&height=100&seq=13&orientation=squarish" 
+                            alt="David Wilson" 
+                            class="w-full h-full object-cover object-top">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Sophia Chen</h4>
+                            <p class="text-gray-600 text-sm">CMO, Boutique Escapes</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card bg-white rounded-lg shadow-md p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-half-fill"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6">"Emma delivered exceptional content for our tech accessories launch. Her ability to naturally integrate our products into her lifestyle content resulted in authentic promotion that resonated with her audience."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-4">
+                            <img src="https://readdy.ai/api/search-image?query=professional%2520headshot%2520of%2520male%2520founder%2520with%2520friendly%2520expression%252C%2520casual%2520attire%252C%2520neutral%2520background%252C%2520startup%2520founder%2520portrait%2520style&width=100&height=100&seq=13&orientation=squarish" 
+                            alt="David Wilson" 
+                            class="w-full h-full object-cover object-top">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">James Wilson</h4>
+                            <p class="text-gray-600 text-sm">Product Manager, TechStyle</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 5 -->
+                <div class="testimonial-card bg-white rounded-lg shadow-md p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6">"Emma's speaking engagement at our digital marketing conference was a highlight for attendees. Her insights on authentic content creation were both practical and inspiring. We've already booked her for next year."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-4">
+                            <img src="https://readdy.ai/api/search-image?query=professional%2520headshot%2520of%2520male%2520founder%2520with%2520friendly%2520expression%252C%2520casual%2520attire%252C%2520neutral%2520background%252C%2520startup%2520founder%2520portrait%2520style&width=100&height=100&seq=13&orientation=squarish" 
+                            alt="David Wilson" 
+                            class="w-full h-full object-cover object-top">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Daniel Thompson</h4>
+                            <p class="text-gray-600 text-sm">Event Director, DigitalNow Conference</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 6 -->
+                <div class="testimonial-card bg-white rounded-lg shadow-md p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6">"Emma's consulting services transformed our social media strategy. Her insights on content planning and audience engagement helped us build an authentic brand voice that's increased our following by 200% in six months."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-4">
+                            <img src="https://readdy.ai/api/search-image?query=professional%2520headshot%2520of%2520male%2520founder%2520with%2520friendly%2520expression%252C%2520casual%2520attire%252C%2520neutral%2520background%252C%2520startup%2520founder%2520portrait%2520style&width=100&height=100&seq=13&orientation=squarish" 
                                          alt="David Wilson" 
                                          class="w-full h-full object-cover object-top">
-                                </div>
-                                <div>
-                                    <h4 class="text-lg font-semibold text-gray-900">David Wilson</h4>
-                                    <p class="text-sm text-gray-600">Founder, Fresh Eats</p>
-                                </div>
-                            </div>
-                            <p class="text-gray-700 italic mb-4">"As a startup, we needed content that would help us stand out in a crowded market. Jessica delivered beyond our expectations with stunning food photography and lifestyle content that perfectly captured our brand's mission."</p>
-                            <div class="flex text-primary">
-                                <i class="ri-star-fill ri-lg"></i>
-                                <i class="ri-star-fill ri-lg"></i>
-                                <i class="ri-star-fill ri-lg"></i>
-                                <i class="ri-star-fill ri-lg"></i>
-                                <i class="ri-star-fill ri-lg"></i>
-                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Aisha Johnson</h4>
+                            <p class="text-gray-600 text-sm">Founder, Bloom Beauty</p>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Navigation Arrows -->
-                <button class="absolute top-1/2 left-0 transform -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center text-primary z-10 focus:outline-none" id="prev-testimonial">
-                    <i class="ri-arrow-left-s-line ri-lg"></i>
-                </button>
-                <button class="absolute top-1/2 right-0 transform -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center text-primary z-10 focus:outline-none" id="next-testimonial">
-                    <i class="ri-arrow-right-s-line ri-lg"></i>
-                </button>
-                
-                <!-- Dots -->
-                <div class="flex justify-center mt-8" id="testimonial-dots">
-                    <button class="w-3 h-3 rounded-full bg-primary mx-1 active-dot"></button>
-                    <button class="w-3 h-3 rounded-full bg-secondary mx-1"></button>
-                    <button class="w-3 h-3 rounded-full bg-secondary mx-1"></button>
-                    <button class="w-3 h-3 rounded-full bg-secondary mx-1"></button>
-                </div>
             </div>
+            
+           
         </div>
     </section>
-
     <!-- Pricing Section -->
     <section id="pricing" class="py-20 bg-gray-50">
         <div class="container mx-auto px-4">    
@@ -820,83 +867,7 @@
     </script>
     
     <!-- Testimonial Carousel Script -->
-    <script id="testimonial-carousel-script">
-        document.addEventListener('DOMContentLoaded', function() {
-            const slider = document.getElementById('testimonial-slider');
-            const prevButton = document.getElementById('prev-testimonial');
-            const nextButton = document.getElementById('next-testimonial');
-            const dots = document.querySelectorAll('#testimonial-dots button');
-            
-            let currentIndex = 0;
-            const testimonials = slider.querySelectorAll('.testimonial-card');
-            const totalSlides = testimonials.length;
-            
-            function updateSlider() {
-                const slideWidth = slider.clientWidth;
-                slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-                slider.style.transition = 'transform 0.5s ease';
-                
-                // Update dots
-                dots.forEach((dot, index) => {
-                    if (index === currentIndex) {
-                        dot.classList.remove('bg-secondary');
-                        dot.classList.add('bg-primary', 'active-dot');
-                    } else {
-                        dot.classList.remove('bg-primary', 'active-dot');
-                        dot.classList.add('bg-secondary');
-                    }
-                });
-            }
-            
-            function goToSlide(index) {
-                if (index < 0) {
-                    currentIndex = totalSlides - 1;
-                } else if (index >= totalSlides) {
-                    currentIndex = 0;
-                } else {
-                    currentIndex = index;
-                }
-                updateSlider();
-            }
-            
-            prevButton.addEventListener('click', () => {
-                goToSlide(currentIndex - 1);
-            });
-            
-            nextButton.addEventListener('click', () => {
-                goToSlide(currentIndex + 1);
-            });
-            
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', () => {
-                    goToSlide(index);
-                });
-            });
-            
-            // Auto slide
-            let interval = setInterval(() => {
-                goToSlide(currentIndex + 1);
-            }, 5000);
-            
-            // Pause on hover
-            const testimonialContainer = document.getElementById('testimonial-container');
-            testimonialContainer.addEventListener('mouseenter', () => {
-                clearInterval(interval);
-            });
-            
-            testimonialContainer.addEventListener('mouseleave', () => {
-                interval = setInterval(() => {
-                    goToSlide(currentIndex + 1);
-                }, 5000);
-            });
-            
-            // Initial setup
-            updateSlider();
-            
-            // Handle window resize
-            window.addEventListener('resize', updateSlider);
-        });
-    </script>
+    
     
     <!-- Smooth Scroll Script -->
     <script id="smooth-scroll-script">
