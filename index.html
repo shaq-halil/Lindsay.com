@@ -11,20 +11,41 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
     <style>
+        :root {
+            --primary: #0EA5E9;
+            --secondary: #1E293B;
+            --accent: #F59E0B;
+            --dark: #0F172A;
+            --light: #F8FAFC;
+        }
+        
         :where([class^="ri-"])::before { content: "\f3c2"; }
         body {
             font-family: 'Inter', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
         }
-         /* Example Tailwind colors fallback, adjust according to your setup */
-  .bg-primary {
-    background-color: #3b82f6; /* Tailwind blue-500 */
-  }
-  .text-primary {
-    color: #3b82f6;
-  }
-  .border-secondary {
-    border-color: #e5e7eb; /* Tailwind gray-200 */
-  }
+        .bg-primary {
+            background-color: var(--primary);
+        }
+        .text-primary {
+            color: var(--primary);
+        }
+        .bg-secondary {
+            background-color: var(--secondary);
+        }
+        .text-secondary {
+            color: var(--secondary);
+        }
+        .bg-accent {
+            background-color: var(--accent);
+        }
+        .text-accent {
+            color: var(--accent);
+        }
+        .border-primary {
+            border-color: var(--primary);
+        }
         .min-h-screen{
             min-height: 85vh !important;
         }
@@ -32,22 +53,28 @@
             font-family: 'Poppins', sans-serif;
         }
         .hero-section {
-            background-image: linear-gradient(to right, rgba(255, 240, 245, 0.95) 50%, rgba(255, 240, 245, 0.5) 100%);
+            background: linear-gradient(135deg, var(--dark) 0%, var(--secondary) 100%);
         }
         .think{
             height: auto !important;
         }
         .testimonial-card {
             transition: transform 0.3s ease;
+            background: var(--secondary);
+            border: 1px solid rgba(255,255,255,0.1);
         }
         .testimonial-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(14, 165, 233, 0.2);
         }
         .portfolio-item {
             transition: transform 0.3s ease;
+            background: var(--secondary);
+            border: 1px solid rgba(255,255,255,0.1);
         }
         .portfolio-item:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(14, 165, 233, 0.2);
         }
         .custom-checkbox {
             position: relative;
@@ -66,12 +93,12 @@
             left: 0;
             height: 20px;
             width: 20px;
-            background-color: white;
-            border: 2px solid #FF69B4;
+            background-color: var(--secondary);
+            border: 2px solid var(--primary);
             border-radius: 4px;
         }
         .custom-checkbox input:checked ~ .checkmark {
-            background-color: #FF69B4;
+            background-color: var(--primary);
         }
         .checkmark:after {
             content: "";
@@ -94,7 +121,7 @@
             -webkit-appearance: none;
             width: 100%;
             height: 6px;
-            background: #FFD1DC;
+            background: var(--secondary);
             border-radius: 5px;
             outline: none;
         }
@@ -103,7 +130,7 @@
             appearance: none;
             width: 20px;
             height: 20px;
-            background: #FF69B4;
+            background: var(--primary);
             border-radius: 50%;
             cursor: pointer;
         }
@@ -125,7 +152,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: #FFD1DC;
+            background-color: var(--secondary);
             transition: .4s;
             border-radius: 24px;
         }
@@ -141,76 +168,151 @@
             border-radius: 50%;
         }
         input:checked + .slider {
-            background-color: #FF69B4;
+            background-color: var(--primary);
         }
         input:checked + .slider:before {
             transform: translateX(26px);
         }
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        .pricing-card {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(14, 165, 233, 0.2);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, #0284C7 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #0284C7 0%, var(--primary) 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(14, 165, 233, 0.4);
+        }
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(14, 165, 233, 0.4);
+        }
     </style>
-    <script>tailwind.config={theme:{extend:{colors:{primary:'#FF69B4',secondary:'#FFD1DC'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0EA5E9',
+                        secondary: '#1E293B',
+                        accent: '#F59E0B',
+                        dark: '#0F172A',
+                        light: '#F8FAFC'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body class="bg-white">
+<body class="bg-dark text-light">
     <!-- Header -->
-    <header class="fixed w-full bg-white shadow-sm z-50">
+    <header class="fixed w-full bg-dark shadow-sm z-50 border-b border-gray-800">
         
         <div class="container mx-auto px-4 py-4 flex items-center justify-between">
             <a href="#" class="text-3xl font-['Poppins'] text-primary">Abba de-Graft</a>
             
             <!-- Desktop Navigation -->
             <nav class="hidden md:flex mood items-center space-x-8">
-                <a href="#home" class="text-gray-800 hover:text-primary transition-colors">Home</a>
-                <a href="#about" class="text-gray-800 hover:text-primary transition-colors">About</a>
-                <a href="#portfolio" class="text-gray-800 hover:text-primary transition-colors">Portfolio</a>
-                <a href="#testimonials" class="text-gray-800 hover:text-primary transition-colors">Testimonials</a>
-                <a href="#pricing" class="text-gray-800 hover:text-primary transition-colors">Pricing</a>
-                <a href="#contact" class="text-gray-800 hover:text-primary transition-colors">Contact</a>
-                <button class="bg-primary text-white px-6 py-2 !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors"><a href="https://wa.link/u51l2g">Hire Me</a></button>
+                <a href="#home" class="nav-link text-light hover:text-primary transition-colors">Home</a>
+                <a href="#about" class="nav-link text-light hover:text-primary transition-colors">About</a>
+                <a href="#portfolio" class="nav-link text-light hover:text-primary transition-colors">Portfolio</a>
+                <a href="#testimonials" class="nav-link text-light hover:text-primary transition-colors">Testimonials</a>
+                <a href="#pricing" class="nav-link text-light hover:text-primary transition-colors">Pricing</a>
+                <a href="#contact" class="nav-link text-light hover:text-primary transition-colors">Contact</a>
+                <button class="btn-primary text-white px-6 py-2 rounded-button whitespace-nowrap"><a href="https://wa.link/u51l2g">Hire Me</a></button>
             </nav>
             
             <!-- Mobile Menu Button -->
-            <button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-800" id="mobile-menu-button">
+            <button class="md:hidden w-10 h-10 flex items-center justify-center text-light" id="mobile-menu-button">
                 <i class="ri-menu-line ri-lg"></i>
             </button>
         </div>
         
         <!-- Mobile Navigation -->
-        <div class="md:hidden hidden bg-white w-full absolute top-full left-0 shadow-md" id="mobile-menu">
+        <div class="md:hidden hidden bg-dark w-full absolute top-full left-0 shadow-md border-b border-gray-800" id="mobile-menu">
             <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
-                <a href="#home" class="text-gray-800 hover:text-primary transition-colors py-2">Home</a>
-                <a href="#about" class="text-gray-800 hover:text-primary transition-colors py-2">About</a>
-                <a href="#portfolio" class="text-gray-800 hover:text-primary transition-colors py-2">Portfolio</a>
-                <a href="#testimonials" class="text-gray-800 hover:text-primary transition-colors py-2">Testimonials</a>
-                <a href="#pricing" class="text-gray-800 hover:text-primary transition-colors py-2">Pricing</a>
-                <a href="#contact" class="text-gray-800 hover:text-primary transition-colors py-2">Contact</a>
-                <button class="bg-primary text-white px-6 py-2 !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors"><a href="https://wa.link/u51l2g">Hire Me</a></button>
+                <a href="#home" class="text-light hover:text-primary transition-colors py-2">Home</a>
+                <a href="#about" class="text-light hover:text-primary transition-colors py-2">About</a>
+                <a href="#portfolio" class="text-light hover:text-primary transition-colors py-2">Portfolio</a>
+                <a href="#testimonials" class="text-light hover:text-primary transition-colors py-2">Testimonials</a>
+                <a href="#pricing" class="text-light hover:text-primary transition-colors py-2">Pricing</a>
+                <a href="#contact" class="text-light hover:text-primary transition-colors py-2">Contact</a>
+                <button class="btn-primary text-white px-6 py-2 rounded-button whitespace-nowrap"><a href="https://wa.link/u51l2g">Hire Me</a></button>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen pt-20 hero-section" style="background:rgb(206, 152, 165);">
+    <section id="home" class="min-h-screen pt-20 hero-section">
         <div class="container mx-auto px-4 h-full flex flex-col justify-center">
             <div class="w-full flex flex-col md:flex-row items-center">
                 <div class="w-full md:w-1/2 pt-16 md:pt-0">
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900 mb-6">
-                        Empowering Brands Through Authentic Storytelling
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                        Empowering Brands Through <span class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 font-['Poppins'] text-primary">Authentic Storytelling</span>
                     </h1>
-                    <p class="text-xl md:text-2xl text-gray-700 mb-8">Digital Creator | Lifestyle Influencer</p>
+                    <p class="text-xl md:text-2xl text-gray-300 mb-8">Digital Creator | Lifestyle Influencer</p>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <button class="bg-primary text-white px-8 py-3 !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors font-medium">
+                        <button class="btn-primary text-white px-8 py-3 rounded-button whitespace-nowrap font-medium">
                            <a href="https://wa.link/u51l2g">Hire Me</a>
                         </button>
-                        <button class="px-8 py-3 bg-pink-600 text-white rounded-button whitespace-nowrap  rounded hover:bg-pink-700 transition"><a href="./images/card.jpg" download>Download card</a>
-                          
-                            </button>
-                          </a>
+                        <button class="btn-secondary text-primary px-8 py-3 rounded-button whitespace-nowrap font-medium">
+                            <a href="./images/card.jpg" download>Download card</a>
+                        </button>
                     </div>
                 </div>
                 <div class="w-full md:w-1/2 flex justify-center mt-12 md:mt-0">
-                    <div class="relative md:w-96 md:h-96 rounded-full shadow-xl">
-                        <img src="./images/main.png" 
+                    <div class="relative md:w-96 md:h-96 rounded-full shadow-xl border-4 border-primary/20">
+                        <img src="./images/main.jpg" 
                              alt="Digital Creator" 
-                             class="w-full h-full object-cover object-top">
+                             class="w-full h-full object-cover object-top rounded-full">
                     </div>
                 </div>
             </div>
@@ -218,42 +320,41 @@
     </section>
 
     <!-- About Me Section -->
-    <section id="about" class="py-10 bg-white">
+    <section id="about" class="py-20 bg-secondary">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">About Me</h2>
+                <h2 class="text-4xl font-bold mb-4">About Me</h2>
                 <div class="w-24 h-1 bg-primary mx-auto"></div>
             </div>
             
             <div class="flex flex-col md:flex-row items-center gap-12">
                 <div class="w-full md:w-1/2">
-                    <div class="rounded-2xl think overflow-hidden border-4 border-secondary shadow-lg">
+                    <div class="rounded-2xl think overflow-hidden border-4 border-primary/20 shadow-lg">
                         <img src="./images/er.jpg" 
                              alt="About Me" 
                              class="w-full h-full object-cover object-top">
                     </div>
                 </div>
                 <div class="w-full md:w-1/2">
-                    <h3 class="text-2xl font-semibold text-gray-900 mb-6">Hi, I'm Lindsay Abba de-Graft</h3>
-                    <p class="text-gray-700 mb-6 leading-relaxed">
+                    <h3 class="text-2xl font-semibold mb-6">Hi, I'm Lindsay Abba de-Graft</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
                         As a digital creator and lifestyle influencer with a few years of experience, I've partnered with leading brands to create authentic content that resonates with audiences across multiple platforms. My background in digital marketing and photography allows me to bring a strategic approach to every collaboration.
                     </p>
-                    <p class="text-gray-700 mb-8 leading-relaxed">
+                    <p class="text-gray-300 mb-8 leading-relaxed">
                         I believe in creating genuine connections through storytelling that feels personal and relatable. My content focuses on lifestyle, wellness, travel, and sustainable living - helping brands connect with conscious consumers in meaningful ways.
                     </p>
                     <div class="flex flex-wrap gap-4">
-                        <div class="bg-secondary bg-opacity-30 px-4 py-2 rounded-full">
+                        <div class="bg-primary/20 px-4 py-2 rounded-full">
                             <span class="text-primary font-medium">Content Creation</span>
                         </div>
-                        <div class="bg-secondary bg-opacity-30 px-4 py-2 rounded-full">
+                        <div class="bg-primary/20 px-4 py-2 rounded-full">
                             <span class="text-primary font-medium">Event Moderation</span>
                         </div>
-                        <div class="bg-secondary bg-opacity-30 px-4 py-2 rounded-full">
-                            <span class="text-primary font-medium">Photo Modeling
-                            </span>
+                        <div class="bg-primary/20 px-4 py-2 rounded-full">
+                            <span class="text-primary font-medium">Photo Modeling</span>
                         </div>
-                        <div class="bg-secondary bg-opacity-30 px-4 py-2 rounded-full">
-                            <span class="text-primary font-medium">Social Media ADS </span>
+                        <div class="bg-primary/20 px-4 py-2 rounded-full">
+                            <span class="text-primary font-medium">Social Media ADS</span>
                         </div>
                     </div>
                 </div>
@@ -262,28 +363,28 @@
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="py-20 bg-gray-50">
+    <section id="portfolio" class="py-20 bg-dark">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">My Portfolio</h2>
-                <p class="text-gray-700 max-w-2xl mx-auto">Explore my recent projects and collaborations with brands across various industries.</p>
+                <h2 class="text-4xl font-bold mb-4">My Portfolio</h2>
+                <p class="text-gray-300 max-w-2xl mx-auto">Explore my recent projects and collaborations with brands across various industries.</p>
                 <div class="w-24 h-1 bg-primary mx-auto mt-4"></div>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Portfolio Item 1 -->
-                <div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-md">
+                <div class="portfolio-item rounded-lg overflow-hidden p-1">
                     <div class="h-64 overflow-hidden"><a href="https://vt.tiktok.com/ZShTNNjrs/">
                         <img src="./images/photo model_PhotoGrid.png" 
                              alt="Dapper Deft Shoot" 
                              class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105"></a>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Dapper Defts x Abba de-Graft</h3>
-                        <p class="text-gray-700 mb-4"><a href="https://vt.tiktok.com/ZShTNNjrs/"><span class=" text-primary ">Dapper Defts </span></a>is an emerging fashion brand making waves quickly gaining attention for its originality, authenticity, bold aesthetic, and refinement. .</p>
+                        <h3 class="text-xl font-semibold mb-2">Dapper Defts x Abba de-Graft</h3>
+                        <p class="text-gray-300 mb-4"><a href="https://vt.tiktok.com/ZShTNNjrs/"><span class="text-primary">Dapper Defts </span></a>is an emerging fashion brand making waves quickly gaining attention for its originality, authenticity, bold aesthetic, and refinement.</p>
                         <div class="flex justify-between items-center">
                             <span class="text-sm text-primary font-medium">Photo Modeling</span>
-                            <a href="https://vt.tiktok.com/ZShTNNjrs/" class="text-gray-900 hover:text-primary transition-colors">
+                            <a href="https://vt.tiktok.com/ZShTNNjrs/" class="text-light hover:text-primary transition-colors">
                                 <p>view</p>
                             </a>
                         </div>
@@ -291,7 +392,7 @@
                 </div>
                 
                 <!-- Portfolio Item 2 -->
-                <div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-md">
+                <div class="portfolio-item rounded-lg overflow-hidden p-1">
                     <div class="h-64 overflow-hidden">
                         <a href="https://www.tiktok.com/@abba_degraft/video/7503141078908947717?_r=1&u_code=ejb3b4edk1l8fb&preview_pb=0&sharer_language=en&_d=eeck304721f4f1&share_item_id=7503141078908947717&source=h5_m&timestamp=1748266129&user_id=7483512293834130433&sec_user_id=MS4wLjABAAAA_kojrTnfok45kFKHEkXi1RdmA7NxjQr_KAt1soLCdGHim195-ycy1bBtrOq60OIQ&social_share_type=0&utm_source=whatsapp&utm_campaign=client_share&utm_medium=android&share_iid=7493333471553914625&share_link_id=419b19db-c521-4994-be88-22a1f8ddbede&share_app_id=1233&ugbiz_name=MAIN&ug_btm=b5836%2Cb2878&link_reflow_popup_iteration_sharer=%7B%22click_empty_to_play%22%3A1%2C%22dynamic_cover%22%3A1%2C%22follow_to_play_duration%22%3A-1.0%2C%22profile_clickable%22%3A1%7D&enable_checksum=1"><img src="./images/coperate.jpg" 
                             alt="Corperate Dinner" 
@@ -299,12 +400,11 @@
                         
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Corperate Event Morderation 
-                        </h3>
-                        <p class="text-gray-700 mb-4">Delivering a captivating experience with poise and charisma to my prestigious audience at the renowned <a href="https://www.tiktok.com/@abba_degraft/video/7503141078908947717?_r=1&u_code=ejb3b4edk1l8fb&preview_pb=0&sharer_language=en&_d=eeck304721f4f1&share_item_id=7503141078908947717&source=h5_m&timestamp=1748266129&user_id=7483512293834130433&sec_user_id=MS4wLjABAAAA_kojrTnfok45kFKHEkXi1RdmA7NxjQr_KAt1soLCdGHim195-ycy1bBtrOq60OIQ&social_share_type=0&utm_source=whatsapp&utm_campaign=client_share&utm_medium=android&share_iid=7493333471553914625&share_link_id=419b19db-c521-4994-be88-22a1f8ddbede&share_app_id=1233&ugbiz_name=MAIN&ug_btm=b5836%2Cb2878&link_reflow_popup_iteration_sharer=%7B%22click_empty_to_play%22%3A1%2C%22dynamic_cover%22%3A1%2C%22follow_to_play_duration%22%3A-1.0%2C%22profile_clickable%22%3A1%7D&enable_checksum=1"><span class=" text-primary ">Golden Luxe Lounge</span></a>.</p>
+                        <h3 class="text-xl font-semibold mb-2">Corporate Event Moderation</h3>
+                        <p class="text-gray-300 mb-4">Delivering a captivating experience with poise and charisma to my prestigious audience at the renowned <a href="https://www.tiktok.com/@abba_degraft/video/7503141078908947717?_r=1&u_code=ejb3b4edk1l8fb&preview_pb=0&sharer_language=en&_d=eeck304721f4f1&share_item_id=7503141078908947717&source=h5_m&timestamp=1748266129&user_id=7483512293834130433&sec_user_id=MS4wLjABAAAA_kojrTnfok45kFKHEkXi1RdmA7NxjQr_KAt1soLCdGHim195-ycy1bBtrOq60OIQ&social_share_type=0&utm_source=whatsapp&utm_campaign=client_share&utm_medium=android&share_iid=7493333471553914625&share_link_id=419b19db-c521-4994-be88-22a1f8ddbede&share_app_id=1233&ugbiz_name=MAIN&ug_btm=b5836%2Cb2878&link_reflow_popup_iteration_sharer=%7B%22click_empty_to_play%22%3A1%2C%22dynamic_cover%22%3A1%2C%22follow_to_play_duration%22%3A-1.0%2C%22profile_clickable%22%3A1%7D&enable_checksum=1"><span class="text-primary">Golden Luxe Lounge</span></a>.</p>
                         <div class="flex justify-between items-center">
                             <span class="text-sm text-primary font-medium">Event Moderation</span>
-                            <a href="https://www.tiktok.com/@abba_degraft/video/7503141078908947717?_r=1&u_code=ejb3b4edk1l8fb&preview_pb=0&sharer_language=en&_d=eeck304721f4f1&share_item_id=7503141078908947717&source=h5_m&timestamp=1748266129&user_id=7483512293834130433&sec_user_id=MS4wLjABAAAA_kojrTnfok45kFKHEkXi1RdmA7NxjQr_KAt1soLCdGHim195-ycy1bBtrOq60OIQ&social_share_type=0&utm_source=whatsapp&utm_campaign=client_share&utm_medium=android&share_iid=7493333471553914625&share_link_id=419b19db-c521-4994-be88-22a1f8ddbede&share_app_id=1233&ugbiz_name=MAIN&ug_btm=b5836%2Cb2878&link_reflow_popup_iteration_sharer=%7B%22click_empty_to_play%22%3A1%2C%22dynamic_cover%22%3A1%2C%22follow_to_play_duration%22%3A-1.0%2C%22profile_clickable%22%3A1%7D&enable_checksum=1" class="text-gray-900 hover:text-primary transition-colors">
+                            <a href="https://www.tiktok.com/@abba_degraft/video/7503141078908947717?_r=1&u_code=ejb3b4edk1l8fb&preview_pb=0&sharer_language=en&_d=eeck304721f4f1&share_item_id=7503141078908947717&source=h5_m&timestamp=1748266129&user_id=7483512293834130433&sec_user_id=MS4wLjABAAAA_kojrTnfok45kFKHEkXi1RdmA7NxjQr_KAt1soLCdGHim195-ycy1bBtrOq60OIQ&social_share_type=0&utm_source=whatsapp&utm_campaign=client_share&utm_medium=android&share_iid=7493333471553914625&share_link_id=419b19db-c521-4994-be88-22a1f8ddbede&share_app_id=1233&ugbiz_name=MAIN&ug_btm=b5836%2Cb2878&link_reflow_popup_iteration_sharer=%7B%22click_empty_to_play%22%3A1%2C%22dynamic_cover%22%3A1%2C%22follow_to_play_duration%22%3A-1.0%2C%22profile_clickable%22%3A1%7D&enable_checksum=1" class="text-light hover:text-primary transition-colors">
                                 <p>view</p>
                             </a>
                         </div>
@@ -312,7 +412,7 @@
                 </div>
                 
                 <!-- Portfolio Item 3 -->
-                <div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-md">
+                <div class="portfolio-item rounded-lg overflow-hidden p-1">
                     <div class="h-64 overflow-hidden">
                         <a href="https://vt.tiktok.com/ZSHbrum4A43mU-sru8R/">
                         <img src="https://readdy.ai/api/search-image?query=home%2520decor%2520photography%2520with%2520minimalist%2520aesthetic%252C%2520stylish%2520living%2520space%2520with%2520pink%2520accents%252C%2520modern%2520furniture%2520and%2520decorative%2520items%252C%2520bright%2520airy%2520room%2520with%2520natural%2520light%252C%2520professional%2520interior%2520photography&width=600&height=400&seq=9&orientation=landscape" 
@@ -320,92 +420,89 @@
                              class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105"></a>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Informal Event</h3>
-                        <p class="text-gray-700 mb-4">Moderating a powerful Cybersecurity Awareness Forum at   <a href="https://vt.tiktok.com/ZSHbrum4A43mU-sru8R/"><span class=" text-primary ">Fiaseman SHS</span></a>empowering students with knowledge to stay safe online.</p>
+                        <h3 class="text-xl font-semibold mb-2">Informal Event</h3>
+                        <p class="text-gray-300 mb-4">Moderating a powerful Cybersecurity Awareness Forum at <a href="https://vt.tiktok.com/ZSHbrum4A43mU-sru8R/"><span class="text-primary">Fiaseman SHS</span></a> empowering students with knowledge to stay safe online.</p>
                         <div class="flex justify-between items-center">
                             <span class="text-sm text-primary font-medium">Home</span>
-                            <a href="https://vt.tiktok.com/ZSHbrum4A43mU-sru8R/" class="text-gray-900 hover:text-primary transition-colors">
+                            <a href="https://vt.tiktok.com/ZSHbrum4A43mU-sru8R/" class="text-light hover:text-primary transition-colors">
                                 <p>view</p>
                             </a>
                         </div>
                     </div>
                 </div>
                 
-                
                 <!-- Portfolio Item 4 -->
-                <div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-md">
+                <div class="portfolio-item rounded-lg overflow-hidden p-1">
                     <div class="h-64 overflow-hidden">
-                        <img src="https://readdy.ai/api/search-image?query=sustainable%2520fashion%2520photography%2520with%2520eco-friendly%2520clothing%2520items%2520arranged%2520aesthetically%252C%2520soft%2520pink%2520background%252C%2520natural%2520materials%2520and%2520textures%252C%2520professional%2520fashion%2520photography%2520with%2520attention%2520to%2520fabric%2520details&width=600&height=400&seq=7&orientation=landscape" 
+                       <a href="https://vm.tiktok.com/ZMADC8c7b/"> <img src="https://readdy.ai/api/search-image?query=sustainable%2520fashion%2520photography%2520with%2520eco-friendly%2520clothing%2520items%2520arranged%2520aesthetically%252C%2520soft%2520pink%2520background%252C%2520natural%2520materials%2520and%2520textures%252C%2520professional%2520fashion%2520photography%2520with%2520attention%2520to%2520fabric%2520details&width=600&height=400&seq=7&orientation=landscape" 
                              alt="Sustainable Fashion Campaign" 
-                             class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105">
+                             class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105"></a>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Demonstrative AD</h3>
-                        <p class="text-gray-700 mb-4"><span class=" text-primary ">Anna-sense Naturals</span> is a rising body essentials brand, founded by a young female entrepreneur, gaining fans for its pure ingredients, skin-loving quality, affordability, and holistic care for hair and body.</p>
+                        <h3 class="text-xl font-semibold mb-2">Demonstrative AD</h3>
+                        <p class="text-gray-300 mb-4"><a href="https://vm.tiktok.com/ZMADC8c7b/"><span class="text-primary">Fred Newton </span></a>is a rising fashion brand, founded by a visionary designer, turning heads for its trendy styles, premium quality, affordability, and a perfect blend of comfort and confidence for everyday wear.</p>
                         <div class="flex justify-between items-center">
                             <span class="text-sm text-primary font-medium">Fashion</span>
-                            <a href="#" class="text-gray-900 hover:text-primary transition-colors">
-                                <p>view</p>
+                            <a href="#" class="text-light hover:text-primary transition-colors">
+                                <a href="https://vm.tiktok.com/ZMADC8c7b/"><p>view</p></a>
                             </a>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Portfolio Item 5 -->
-                <div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-md">
-                    <div class="h-64 overflow-hidden">
+                <div class="portfolio-item rounded-lg overflow-hidden p-1">
+                    <div class="h-64 overflow-hidden"><a href="https://vm.tiktok.com/ZMADCNCFs/">
                         <img src="https://readdy.ai/api/search-image?query=food%2520photography%2520for%2520organic%2520meal%2520delivery%2520service%252C%2520beautifully%2520plated%2520healthy%2520dishes%2520with%2520vibrant%2520colors%252C%2520pink%2520tableware%2520accents%252C%2520soft%2520natural%2520lighting%252C%2520professional%2520food%2520photography%2520style&width=600&height=400&seq=8&orientation=landscape" 
                              alt="Food Delivery Service" 
-                             class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105">
+                             class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105"></a>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Ambassadorial AD</h3>
-                        <p class="text-gray-700 mb-4"><span class=" text-primary ">Golden Luxe Lounge</span> is Tarkwa’s top-tier hangout, turning heads for its stunning ambiance, exceptional customer service, and a menu that blends high-grade taste with unbeatable affordability.</p>
+                        <h3 class="text-xl font-semibold mb-2">Ambassadorial AD</h3>
+                        <p class="text-gray-300 mb-4"><a href="https://vm.tiktok.com/ZMADCNCFs/"><span class="text-primary">Crave Cube</span></a> is Tarkwa's favorite drive-in for sweet lovers, serving irresistible doughnuts, milkshakes, and ice creams on a well crafted menu at affordable prices with easy on-the go ordering.</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-sm text-primary font-medium">Food</span>
-                            <a href="#" class="text-gray-900 hover:text-primary transition-colors">
-                                <p>view</p>
+                            <span class="text-sm text-primary font-medium">Ambassadorial AD</span>
+                            <a href="#" class="text-light hover:text-primary transition-colors">
+                                <a href="https://vm.tiktok.com/ZMADCNCFs/"><p>view</p></a>
                             </a>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Portfolio Item 6 -->
-               
-            <div class="portfolio-item bg-white rounded-lg overflow-hidden shadow-md">
-                <div class="h-64 overflow-hidden">
-                    <a href="https://vt.tiktok.com/ZSHbru6Wmdm1E-KZkoK/">
-                    <img src="https://readdy.ai/api/search-image?query=sustainable%2520fashion%2520photography%2520with%2520eco-friendly%2520clothing%2520items%2520arranged%2520aesthetically%252C%2520soft%2520pink%2520background%252C%2520natural%2520materials%2520and%2520textures%252C%2520professional%2520fashion%2520photography%2520with%2520attention%2520to%2520fabric%2520details&width=600&height=400&seq=7&orientation=landscape" 
-                         alt="Wellness Brand Collaboration" 
+                <div class="portfolio-item rounded-lg overflow-hidden p-1">
+                    <div class="h-64 overflow-hidden">
+                        <a href="https://vt.tiktok.com/ZSHbru6Wmdm1E-KZkoK/">
+                        <img src="./images/Jaleeza.jpg" 
                          class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105"></a>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Location AD</h3>
-                    <p class="text-gray-700 mb-4"><a href="https://vt.tiktok.com/ZSHbru6Wmdm1E-KZkoK/"><span class=" text-primary ">Jaleesa Fragrance</span></a> stands out as Tarkwa’s go-to fragrance and clothing accessories destination, winning hearts with unmatched quality, irresistible affordability, and customer care that feels truly personal.</p>
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm text-primary font-medium">Wellness</span>
-                        <a href="https://vt.tiktok.com/ZSHbru6Wmdm1E-KZkoK/" class="text-gray-900 hover:text-primary transition-colors">
-                            <p>view</p>
-                        </a>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Location AD</h3>
+                        <p class="text-gray-300 mb-4"><a href="https://vt.tiktok.com/ZSHbru6Wmdm1E-KZkoK/"><span class="text-primary">Jaleesa Fragrance</span></a> stands out as Tarkwa's go-to fragrance and clothing accessories destination, winning hearts with unmatched quality, irresistible affordability, and customer care that feels truly personal.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-primary font-medium">Location AD</span>
+                            <a href="https://vt.tiktok.com/ZSHbru6Wmdm1E-KZkoK/" class="text-light hover:text-primary transition-colors">
+                                <p>view</p>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-           
         </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="py-20">
+    <section id="testimonials" class="py-20 bg-secondary">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Client Testimonials</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">What brands and partners say about working with me.</p>
+                <p class="text-gray-300 max-w-2xl mx-auto">What brands and partners say about working with me.</p>
                 <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Testimonial 1 -->
-                <div class="testimonial-card bg-white rounded-lg shadow-md p-8">
+                <div class="testimonial-card rounded-lg p-8">
                     <div class="flex items-center mb-4">
                         <div class="text-yellow-400 flex">
                             <i class="ri-star-fill"></i>
@@ -415,22 +512,22 @@
                             <i class="ri-star-fill"></i>
                         </div>
                     </div>
-                    <p class="text-gray-700 mb-6">"Emma's content for our sustainable fashion line exceeded all expectations. Her authentic approach resonated with her audience and directly contributed to a 40% increase in website traffic during our campaign."</p>
+                    <p class="text-gray-300 mb-6">"Abba is a vibrant content creator and engaging karaoke MC, known for her creativity, authenticity, and infectious energy. Whether online or in-person, she brings people together and creates memorable experiences. Highly recommended for standout content and lively event hosting."</p>
                     <div class="flex items-center">
                         <div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-4">
-                            <img src="https://readdy.ai/api/search-image?query=professional%2520headshot%2520of%2520male%2520founder%2520with%2520friendly%2520expression%252C%2520casual%2520attire%252C%2520neutral%2520background%252C%2520startup%2520founder%2520portrait%2520style&width=100&height=100&seq=13&orientation=squarish" 
-                            alt="David Wilson" 
-                            class="w-full h-full object-cover object-top">
+                            <img src="./images/GAZA.jpg" 
+                            alt="GAZ" 
+                            class="w-full h-full object-cover object-top rounded-full">
                         </div>
                         <div>
-                            <h4 class="font-semibold">Olivia Bennett</h4>
-                            <p class="text-gray-600 text-sm">Marketing Director, EcoStyle</p>
+                            <h4 class="font-semibold">Gaza</h4>
+                            <p class="text-gray-400 text-sm">Shooters Restaurant, Owner</p>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Testimonial 2 -->
-                <div class="testimonial-card bg-white rounded-lg shadow-md p-8">
+                <div class="testimonial-card rounded-lg p-8">
                     <div class="flex items-center mb-4">
                         <div class="text-yellow-400 flex">
                             <i class="ri-star-fill"></i>
@@ -440,22 +537,22 @@
                             <i class="ri-star-fill"></i>
                         </div>
                     </div>
-                    <p class="text-gray-700 mb-6">"Working with Emma was seamless from start to finish. Her strategic approach to content creation helped us reach new audiences and establish our brand in the wellness space. The ROI was impressive."</p>
+                    <p class="text-gray-300 mb-6">"Working with Abba was seamless from start to finish. Her strategic approach to content creation helped us reach new audiences and establish our brand in the wellness space. The ROI was impressive."</p>
                     <div class="flex items-center">
                         <div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-4">
                             <img src="https://readdy.ai/api/search-image?query=professional%2520headshot%2520of%2520male%2520founder%2520with%2520friendly%2520expression%252C%2520casual%2520attire%252C%2520neutral%2520background%252C%2520startup%2520founder%2520portrait%2520style&width=100&height=100&seq=13&orientation=squarish" 
                             alt="David Wilson" 
-                            class="w-full h-full object-cover object-top">
+                            class="w-full h-full object-cover object-top rounded-full">
                         </div>
                         <div>
                             <h4 class="font-semibold">Michael Rodriguez</h4>
-                            <p class="text-gray-600 text-sm">Founder, Mindful Wellness Co.</p>
+                            <p class="text-gray-400 text-sm">Founder, Mindful Wellness Co.</p>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Testimonial 3 -->
-                <div class="testimonial-card bg-white rounded-lg shadow-md p-8">
+                <div class="testimonial-card rounded-lg p-8">
                     <div class="flex items-center mb-4">
                         <div class="text-yellow-400 flex">
                             <i class="ri-star-fill"></i>
@@ -465,195 +562,183 @@
                             <i class="ri-star-fill"></i>
                         </div>
                     </div>
-                    <p class="text-gray-700 mb-6">"Emma's travel content for our boutique hotel chain captured the essence of our properties perfectly. Her audience engagement is remarkable, and we saw a 25% increase in bookings from her followers."</p>
+                    <p class="text-gray-300 mb-6">"Abba's travel content for our boutique hotel chain captured the essence of our properties perfectly. Her audience engagement is remarkable, and we saw a 25% increase in bookings from her followers."</p>
                     <div class="flex items-center">
                         <div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-4">
-                            <img src="https://readdy.ai/api/search-image?query=professional%2520headshot%2520of%2520male%2520founder%2520with%2520friendly%2520expression%252C%2520casual%2520attire%252C%2520neutral%2520background%252C%2520startup%2520founder%2520portrait%2520style&width=100&height=100&seq=13&orientation=squarish" 
-                            alt="David Wilson" 
-                            class="w-full h-full object-cover object-top">
+                            <img src="https://readdy.ai/api/search-image?query=professional%2520headshot%2520of%2520female%2520executive%2520with%2520confident%2520expression%252C%2520professional%2520attire%252C%2520corporate%2520background%252C%2520business%2520portrait%2520style&width=100&height=100&seq=14&orientation=squarish" 
+                            alt="Sophia Chen" 
+                            class="w-full h-full object-cover object-top rounded-full">
                         </div>
                         <div>
                             <h4 class="font-semibold">Sophia Chen</h4>
-                            <p class="text-gray-600 text-sm">CMO, Boutique Escapes</p>
+                            <p class="text-gray-400 text-sm">CMO, Boutique Escapes</p>
                         </div>
                     </div>
                 </div>
-                
-                
-           
+            </div>
         </div>
     </section>
+
     <!-- Pricing Section -->
-    <section id="pricing" class="py-20 bg-gray-50">
+    <section id="pricing" class="py-20 bg-dark">
         <div class="container mx-auto px-4">    
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">Collaboration Packages</h2>
-                <p class="text-gray-700 max-w-2xl mx-auto">Flexible options to meet your brand's needs and goals.</p>
+                <h2 class="text-4xl font-bold mb-4">Collaboration Packages</h2>
+                <p class="text-gray-300 max-w-2xl mx-auto">Flexible options to meet your brand's needs and goals.</p>
                 <div class="w-24 h-1 bg-primary mx-auto mt-4"></div>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Basic Package -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-md transition-transform hover:-translate-y-2">
-                    <div class="p-8">
-                        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Event Moderation</h3>
-                        <h4 class="text-2xl py-5 font-semibold text-gray-900 mb-4">Corperate Event</h4>
-                        <div class="flex items-baseline mb-6">
-                            <span class="text-4xl font-bold text-primary">600+ Ghc </span>
-                            <span class="text-gray-600 ml-2">/ Event</span>
-                        </div>
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-start">
-                                <i class="ri-check-line ri-lg text-primary mr-2 mt-1"></i>
-                                <span class="text-gray-700">Clear and engaging communication style</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="ri-check-line ri-lg text-primary mr-2 mt-1"></i>
-                                <span class="text-gray-700">Professional attire suitable for corporate events</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="ri-check-line ri-lg text-primary mr-2 mt-1"></i>
-                                <span class="text-gray-700">Moderation throughout the entire event duration</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="ri-check-line ri-lg text-primary mr-2 mt-1"></i>
-                                <span class="text-gray-700">Coordination with event organizers for smooth flow</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="ri-check-line ri-lg text-primary mr-2 mt-1"></i>
-                                <span class="text-gray-700">Transportation costs are not included in the package price and must be arranged or reimbursed separately</span>
-                            </li>
-                            <h4 class="text-2xl py-5 font-semibold text-gray-900 mb-4">Informal Event</h4>
-                        <div class="flex items-baseline mb-6">
-                            <span class="text-4xl font-bold text-primary">700+ Ghc </span>
-                            <span class="text-gray-600 ml-2">/ Event</span>
-                        </div>
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-start">
-                                <i class="ri-check-line ri-lg text-primary mr-2 mt-1"></i>
-                                <span class="text-gray-700">Event moderation for the full duration</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="ri-check-line ri-lg text-primary mr-2 mt-1"></i>
-                                <span class="text-gray-700">Friendly and engaging interaction with guests</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="ri-check-line ri-lg text-primary mr-2 mt-1"></i>
-                                <span class="text-gray-700">Coordination with event staff</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="ri-check-line ri-lg text-primary mr-2 mt-1"></i>
-                                <span class="text-gray-700">Transportation not included — please arrange or reimburse transportation for both arrival and departure</span>
-                            </li>  
-                        </ul>
-                        <button class="w-full bg-white border-2 border-primary text-primary py-3 !rounded-button whitespace-nowrap hover:bg-primary hover:text-white transition-colors font-medium">
-                           <a href="https://wa.link/ygspg9">Get Started</a> 
-                        </button>
+                <div class="pricing-card bg-secondary rounded-xl overflow-hidden p-8">
+                    <h3 class="text-2xl font-semibold mb-4">Event Moderation</h3>
+                    <h4 class="text-xl py-3 font-semibold mb-4">Corporate Event</h4>
+                    <div class="flex items-baseline mb-6">
+                        <span class="text-4xl font-bold text-primary">600+ Ghc </span>
+                        <span class="text-gray-400 ml-2">/ Event</span>
                     </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="ri-check-line ri-lg text-primary mr-2 mt-1"></i>
+                            <span class="text-gray-300">Clear and engaging communication style</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line ri-lg text-primary mr-2 mt-1"></i>
+                            <span class="text-gray-300">Professional attire suitable for corporate events</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line ri-lg text-primary mr-2 mt-1"></i>
+                            <span class="text-gray-300">Moderation throughout the entire event duration</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line ri-lg text-primary mr-2 mt-1"></i>
+                            <span class="text-gray-300">Coordination with event organizers for smooth flow</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line ri-lg text-primary mr-2 mt-1"></i>
+                            <span class="text-gray-300">Transportation costs are not included in the package price and must be arranged or reimbursed separately</span>
+                        </li>
+                    </ul>
+                    <h4 class="text-xl py-3 font-semibold mb-4">Informal Event</h4>
+                    <div class="flex items-baseline mb-6">
+                        <span class="text-4xl font-bold text-primary">700+ Ghc </span>
+                        <span class="text-gray-400 ml-2">/ Event</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="ri-check-line ri-lg text-primary mr-2 mt-1"></i>
+                            <span class="text-gray-300">Event moderation for the full duration</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line ri-lg text-primary mr-2 mt-1"></i>
+                            <span class="text-gray-300">Friendly and engaging interaction with guests</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line ri-lg text-primary mr-2 mt-1"></i>
+                            <span class="text-gray-300">Coordination with event staff</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line ri-lg text-primary mr-2 mt-1"></i>
+                            <span class="text-gray-300">Transportation not included — please arrange or reimburse transportation for both arrival and departure</span>
+                        </li>  
+                    </ul>
+                    <button class="w-full btn-secondary text-primary py-3 rounded-button whitespace-nowrap font-medium">
+                       <a href="https://wa.link/ygspg9">Get Started</a> 
+                    </button>
                 </div>
                 
                 <!-- Standard Package -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-xl border-2 border-primary relative transform scale-105">
-                    <div class="absolute top-0 right-0 bg-primary text-white px-4 py-1 text-sm font-medium">
+                <div class="pricing-card bg-secondary rounded-xl overflow-hidden p-8 border-2 border-primary relative transform scale-105">
+                    <div class="absolute top-0 right-0 bg-primary text-white px-4 py-1 text-sm font-medium rounded-bl-lg">
                         Popular
                     </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Social Media ADS</h3>
-                        <h4 class="text-2xl py-5 font-semibold text-gray-900 mb-4">Demonstrative ADS</h4>
-                        <div class="flex items-baseline mb-6">
-                            <span class="text-4xl font-bold text-primary">300 Ghc </span>
-                            <span class="text-gray-600 ml-2">/ AD</span>
-                        </div>
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-start">
-                                <i class="ri-check-line ri-lg text-primary mr-2 mt-1"></i>
-                                <span class="text-gray-700">1 professionally crafted ad shared across my social media platforms</span>
-                            </li>
-                           
-                            <h4 class="text-2xl  py-5 font-semibold text-gray-900 mb-4">Location ADS</h4>
-                            <div class="flex items-baseline mb-6">
-                                <span class="text-4xl font-bold text-primary">400 Ghc </span>
-                                <span class="text-gray-600 ml-2">/ AD</span>
-                            </div>
-                            <ul class="space-y-3 mb-8">
-                                <li class="flex items-start">
-                                    <i class="ri-check-line ri-lg text-primary mr-2 mt-1"></i>
-                                    <span class="text-gray-700">Professionally produced ad filmed at your chosen location, posted on all my social channels</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="ri-check-line ri-lg text-primary mr-2 mt-1"></i>
-                                    <span class="text-gray-700">Transportation costs are not included in the package price and must be arranged or reimbursed separately</span>
-                                </li>
-                                
-                                <h4 class="text-2xl py-5 font-semibold text-gray-900 mb-4">Ambassadorial ADS</h4>
-                                <div class="flex items-baseline mb-6">
-                                    <span class="text-4xl font-bold text-primary">1300 Ghc </span>
-                                    <span class="text-gray-600 ml-2">/ Month</span>
-                                </div>
-                                <ul class="space-y-3 mb-8">
-                                    <li class="flex items-start">
-                                        <i class="ri-check-line ri-lg text-primary mr-2 mt-1"></i>
-                                        <span class="text-gray-700">Weekly high-quality ads posted on all my social media platforms
-
-                                        </span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <i class="ri-check-line ri-lg text-primary mr-2 mt-1"></i>
-                                        <span class="text-gray-700">In-person brand promotion throughout the month (at events, meetups, and relevant gatherings)
-
-                                        </span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <i class="ri-check-line ri-lg text-primary mr-2 mt-1"></i>
-                                        <span class="text-gray-700">Consistent visibility and authentic brand mentions to build audience trust and awareness</span>
-                                    </li>
-                                    
-                                    <li class="flex items-start">
-                                    <i class="ri-check-line ri-lg text-primary mr-2 mt-1"></i>
-                                         <span class="text-gray-700">Transportation not included — please arrange or reimburse transportation for both arrival and departure</span>
-                                    </li> 
-                        </ul>
-                        <button class="w-full bg-primary text-white py-3 !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors font-medium">
-                           <a href="https://wa.link/px0av2"> Get Started</a>
-                        </button>
+                    <h3 class="text-2xl font-semibold mb-4">Social Media ADS</h3>
+                    <h4 class="text-xl py-3 font-semibold mb-4">Demonstrative ADS</h4>
+                    <div class="flex items-baseline mb-6">
+                        <span class="text-4xl font-bold text-primary">300 Ghc </span>
+                        <span class="text-gray-400 ml-2">/ AD</span>
                     </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="ri-check-line ri-lg text-primary mr-2 mt-1"></i>
+                            <span class="text-gray-300">1 professionally crafted ad shared across my social media platforms</span>
+                        </li>
+                    </ul>
+                    <h4 class="text-xl py-3 font-semibold mb-4">Location ADS</h4>
+                    <div class="flex items-baseline mb-6">
+                        <span class="text-4xl font-bold text-primary">400 Ghc </span>
+                        <span class="text-gray-400 ml-2">/ AD</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="ri-check-line ri-lg text-primary mr-2 mt-1"></i>
+                            <span class="text-gray-300">Professionally produced ad filmed at your chosen location, posted on all my social channels</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line ri-lg text-primary mr-2 mt-1"></i>
+                            <span class="text-gray-300">Transportation costs are not included in the package price and must be arranged or reimbursed separately</span>
+                        </li>
+                    </ul>
+                    <h4 class="text-xl py-3 font-semibold mb-4">Ambassadorial ADS</h4>
+                    <div class="flex items-baseline mb-6">
+                        <span class="text-4xl font-bold text-primary">1300 Ghc </span>
+                        <span class="text-gray-400 ml-2">/ Month</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="ri-check-line ri-lg text-primary mr-2 mt-1"></i>
+                            <span class="text-gray-300">Weekly high-quality ads posted on all my social media platforms</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line ri-lg text-primary mr-2 mt-1"></i>
+                            <span class="text-gray-300">In-person brand promotion throughout the month (at events, meetups, and relevant gatherings)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line ri-lg text-primary mr-2 mt-1"></i>
+                            <span class="text-gray-300">Consistent visibility and authentic brand mentions to build audience trust and awareness</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line ri-lg text-primary mr-2 mt-1"></i>
+                            <span class="text-gray-300">Transportation not included — please arrange or reimburse transportation for both arrival and departure</span>
+                        </li> 
+                    </ul>
+                    <button class="w-full btn-primary text-white py-3 rounded-button whitespace-nowrap font-medium">
+                       <a href="https://wa.link/px0av2"> Get Started</a>
+                    </button>
                 </div>
                 
                 <!-- Premium Package -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-md transition-transform hover:-translate-y-2">
-                    <div class="p-8">
-                        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Photo Modeling</h3>
-                        <div class="flex items-baseline mb-6">
-                            <span class="text-4xl font-bold text-primary">350 Ghc</span>
-                            <span class="text-gray-600 ml-2">/ Shoot session    </span>
-                        </div>
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-start">
-                                <i class="ri-check-line ri-lg text-primary mr-2 mt-1"></i>
-                                <span class="text-gray-700">Confident in front of the camera with poses that match any style.</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="ri-check-line ri-lg text-primary mr-2 mt-1"></i>
-                                <span class="text-gray-700">Optional promotion on my platforms for extra exposure.</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="ri-check-line ri-lg text-primary mr-2 mt-1"></i>
-                                <span class="text-gray-700">Full presence and commitment for the entire session</span>
-                            </li>
-                            
-                        </ul>
-                        <button class="w-full bg-white border-2 border-primary text-primary py-3 !rounded-button whitespace-nowrap hover:bg-primary hover:text-white transition-colors font-medium">
-                           <a href="https://wa.link/l8beqe"> Get Started</a>
-                        </button>
+                <div class="pricing-card bg-secondary rounded-xl overflow-hidden p-8">
+                    <h3 class="text-2xl font-semibold mb-4">Photo Modeling</h3>
+                    <div class="flex items-baseline mb-6">
+                        <span class="text-4xl font-bold text-primary">350 Ghc</span>
+                        <span class="text-gray-400 ml-2">/ Shoot session</span>
                     </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="ri-check-line ri-lg text-primary mr-2 mt-1"></i>
+                            <span class="text-gray-300">Confident in front of the camera with poses that match any style.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line ri-lg text-primary mr-2 mt-1"></i>
+                            <span class="text-gray-300">Optional promotion on my platforms for extra exposure.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line ri-lg text-primary mr-2 mt-1"></i>
+                            <span class="text-gray-300">Full presence and commitment for the entire session</span>
+                        </li>
+                    </ul>
+                    <button class="w-full btn-secondary text-primary py-3 rounded-button whitespace-nowrap font-medium">
+                       <a href="https://wa.link/l8beqe"> Get Started</a>
+                    </button>
                 </div>
             </div>
             
-            <div class="mt-16 bg-white rounded-xl p-8 shadow-md">
-                <h3 class="text-2xl font-semibold text-gray-900 mb-6 text-center">Need a custom solution?</h3>
-                <p class="text-gray-700 text-center mb-8">I offer tailored packages to meet your specific needs and goals. Let's discuss how we can work together.</p>
+            <div class="mt-16 bg-secondary rounded-xl p-8">
+                <h3 class="text-2xl font-semibold mb-6 text-center">Need a custom solution?</h3>
+                <p class="text-gray-300 text-center mb-8">I offer tailored packages to meet your specific needs and goals. Let's discuss how we can work together.</p>
                 <div class="text-center">
-                    <button class="bg-primary text-white px-8 py-3 !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors font-medium">
+                    <button class="btn-primary text-white px-8 py-3 rounded-button whitespace-nowrap font-medium">
                        <a href="https://wa.link/tilo7j"> Contact Me</a>
                     </button>
                 </div>
@@ -662,73 +747,71 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white">
+    <section id="contact" class="py-20 bg-secondary">
         <div class="container mx-auto px-4">
           <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
-            <p class="text-gray-700 max-w-2xl mx-auto">Ready to collaborate? Reach out to discuss how we can work together.</p>
+            <h2 class="text-4xl font-bold mb-4">Get In Touch</h2>
+            <p class="text-gray-300 max-w-2xl mx-auto">Ready to collaborate? Reach out to discuss how we can work together.</p>
             <div class="w-24 h-1 bg-primary mx-auto mt-4"></div>
           </div>
       
           <div class="w-full">
-            <div class="bg-gray-50 rounded-xl p-8">
-              <h3 class="text-2xl font-semibold text-gray-900 mb-6">Contact Information</h3>
+            <div class="bg-dark rounded-xl p-8">
+              <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
               <div class="space-y-6">
                 <div class="flex items-start">
-                  <div class="w-10 h-10 rounded-full bg-secondary bg-opacity-30 flex items-center justify-center text-primary mr-4">
+                  <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary mr-4">
                     <i class="ri-mail-line ri-lg"></i>
                   </div>
                   <div>
-                    <h4 class="text-lg font-medium text-gray-900 mb-1">Email</h4>
-                    <p class="text-gray-700">lindsay.arthur1@icloud.com</p>
+                    <h4 class="text-lg font-medium mb-1">Email</h4>
+                    <p class="text-gray-300">lindsay.arthur1@icloud.com</p>
                   </div>
                 </div>
       
                 <div class="flex items-start">
-                  <div class="w-10 h-10 rounded-full bg-secondary bg-opacity-30 flex items-center justify-center text-primary mr-4">
+                  <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary mr-4">
                     <i class="ri-map-pin-line ri-lg"></i>
                   </div>
                   <div>
-                    <h4 class="text-lg font-medium text-gray-900 mb-1">Location</h4>
-                    <p class="text-gray-700">UMat, Tarkwa</p>
+                    <h4 class="text-lg font-medium mb-1">Location</h4>
+                    <p class="text-gray-300">UMat, Tarkwa</p>
                   </div>
                 </div>
       
                 <div class="flex items-start">
-                  <div class="w-10 h-10 rounded-full bg-secondary bg-opacity-30 flex items-center justify-center text-primary mr-4">
+                  <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary mr-4">
                     <i class="ri-time-line ri-lg"></i>
                   </div>
                   <div>
-                    <h4 class="text-lg font-medium text-gray-900 mb-1">Working Hours</h4>
-                    <p class="text-gray-700">Monday - Sunday: 24/7</p>
+                    <h4 class="text-lg font-medium mb-1">Working Hours</h4>
+                    <p class="text-gray-300">Monday - Sunday: 24/7</p>
                   </div>
                 </div>
               </div>
       
               <div class="mt-12">
-                <h4 class="text-lg font-medium text-gray-900 mb-4">Follow Me</h4>
+                <h4 class="text-lg font-medium mb-4">Follow Me</h4>
                 <div class="flex space-x-4">
-                    <a href="https://www.tiktok.com/@abba_degraft?_t=ZM-8wdLRvX1UIy&_r=1" class="w-10 h-10 rounded-full bg-secondary bg-opacity-30 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
+                    <a href="https://www.tiktok.com/@abba_degraft?_t=ZM-8wdLRvX1UIy&_r=1" class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
                       <i class="ri-tiktok-line ri-lg"></i>
                     </a>
-                    <a href="https://www.snapchat.com/add/abba_degraft?share_id=8FS8UEWJzjs&locale=en-US" class="w-10 h-10 rounded-full bg-secondary bg-opacity-30 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
+                    <a href="https://www.snapchat.com/add/abba_degraft?share_id=8FS8UEWJzjs&locale=en-US" class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
                       <i class="ri-snapchat-line ri-lg"></i>
                     </a>
                   </div>
                     </div>
-      
-              
             </div>
           </div>
         </div>
       </section>
       
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="bg-dark text-white py-12 border-t border-gray-800">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between mb-12">
                 <div class="mb-8 md:mb-0">
-                    <a href="#" class="text-3xl font-['poppins'] text-white mb-4 inline-block">Abba de-Graft</a>
+                    <a href="#" class="text-3xl font-['poppins'] text-primary mb-4 inline-block">Abba de-Graft</a>
                     <p class="text-gray-400 max-w-xs mt-4">Empowering brands through authentic storytelling and creative content that resonates with audiences.</p>
                 </div>
                 
@@ -754,8 +837,6 @@
                             <li><a href="#contact" class="text-gray-400 hover:text-primary transition-colors">Social Media</a></li>
                         </ul>
                     </div>
-                    
-                    
                 </div>
             </div>
             
@@ -769,13 +850,12 @@
                         <i class="ri-snapchat-line ri-lg"></i>
                     </a>
                 </div>
-                
             </div>
         </div>
     </footer>
 
     <!-- Mobile Menu Script -->
-    <script id="mobile-menu-script">
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
@@ -794,11 +874,8 @@
         });
     </script>
     
-    <!-- Testimonial Carousel Script -->
-    
-    
     <!-- Smooth Scroll Script -->
-    <script id="smooth-scroll-script">
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
             const links = document.querySelectorAll('a[href^="#"]');
             
@@ -826,4 +903,3 @@
     </script>
 </body>
 </html>
-
